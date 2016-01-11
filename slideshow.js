@@ -156,13 +156,13 @@ var Slideshow = function () {
                 currentSlideIndex = 1;
                 setTimeout(function () {
                     moveToSlide(false);
-                }, 200);
+                }, 300);
             }
             else if (isFirstSlide()) {
                 currentSlideIndex = slideshowItems.length - 2;
                 setTimeout(function () {
                     moveToSlide(false);
-                }, 200);
+                }, 300);
             }
         }
         else {

@@ -1,5 +1,6 @@
 .slideshow-container {
     height: 100%;
+    font-size: 0;
 }
 
 .slideshow-images {
@@ -8,7 +9,6 @@
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    font-size: 0;
 }
 
 .slideshow-content {
@@ -127,9 +127,10 @@
 
 .no-js .slideshow-content {
     width: 100%;
-    height: 100%;
+    height: 400px;
     overflow-x: auto;
-    white-space: initial;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .no-js .slideshow-nav {
