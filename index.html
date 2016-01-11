@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple pure javascript slideshow</title>
+    <script language="JavaScript">
+        function isTouchDevice() {
+            return "ontouchstart" in window || navigator.maxTouchPoints;
+        }
+
+        (function CheckJavascriptAndTouch() {
+            var htmlTag = document.querySelector("html");
+            var htmlClasses = htmlTag.getAttribute("class");
+            if (htmlClasses !== null) {
+                htmlTag.setAttribute("class", htmlClasses.replace("no-js", ""));
+            }
+
+            var touchClass = isTouchDevice() ? " touch" : " no-touch";
+            document.querySelector('html').className += touchClass;
+        })();
+    </script>
+    <link rel="stylesheet" href="site.css"/>
+    <link rel="stylesheet" href="slideshow.css"/>
+    <script language="javascript" src="slideshow.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="content">
+        <h1>Simple pure javascript slideshow</h1>
+    </div>
+</header>
+
+<main class="content">
+
+    <h2>Looping slideshow with images</h2>
+    <section class="code">
+        var slideshowImages = Slideshow();
+        <br/>
+        slideshowImages.init('.js-slideshow-images', true);
+    </section>
+
+    <section class="slideshow-images js-slideshow-images">
+        <nav>
+            <button class="slideshow-nav slideshow-nav--prev js-slideshow-previous"></button>
+            <button class="slideshow-nav slideshow-nav--next js-slideshow-next"></button>
+        </nav>
+        <div class="slideshow-container js-slideshow-container">
+            <div class="slideshow-slide js-slideshow-slide">
+                <img class="slideshow-slide--image" src="cat1.jpeg"/>
+            </div>
+            <div class="slideshow-slide js-slideshow-slide">
+                <img class="slideshow-slide--image" src="cat2.jpeg"/>
+            </div>
+            <div class="slideshow-slide js-slideshow-slide">
+                <img class="slideshow-slide--image" src="cat3.jpeg"/>
+            </div>
+        </div>
+        <aside>
+            <div class="slideshow-counter js-slideshow-counter"></div>
+        </aside>
+    </section>
+
+    <hr/>
+
+    <h2>Slideshow with images, non looping</h2>
+    <section class="code">
+        var slideshowImagesNoLoop = Slideshow();
+        <br/>
+        slideshowImagesNoLoop.init('.js-slideshow-images-noloop', false);
+    </section>
+
+    <section class="slideshow-images js-slideshow-images-noloop">
+        <nav>
+            <button class="slideshow-nav slideshow-nav--prev js-slideshow-previous"></button>
+            <button class="slideshow-nav slideshow-nav--next js-slideshow-next"></button>
+        </nav>
+        <div class="slideshow-container js-slideshow-container">
+            <div class="slideshow-slide js-slideshow-slide">
+                <img class="slideshow-slide--image" src="food1.jpeg"/>
+            </div>
+            <div class="slideshow-slide js-slideshow-slide">
+                <img class="slideshow-slide--image" src="food2.jpeg"/>
+            </div>
+            <div class="slideshow-slide js-slideshow-slide">
+                <img class="slideshow-slide--image" src="food3.jpeg"/>
+            </div>
+        </div>
+        <aside>
+            <div class="slideshow-counter js-slideshow-counter"></div>
+        </aside>
+    </section>
+
+    <hr/>
+
+    <h2>Looping slideshow with mixed html content</h2>
+    <section class="code">
+        var slideshowContent = Slideshow();
+        <br/>
+        slideshowContent.init('.js-slideshow-content', true);
+    </section>
+
+    <section class="slideshow-content js-slideshow-content">
+        <nav>
+            <button class="slideshow-nav slideshow-nav--prev js-slideshow-previous"></button>
+            <button class="slideshow-nav slideshow-nav--next js-slideshow-next"></button>
+        </nav>
+        <div class="slideshow-container js-slideshow-container">
+            <div class="slideshow-slide js-slideshow-slide">
+                <div class="slideshow-slide--content">
+                    <div class="media">
+                        <a href="http://www.github.com" class="img">
+                            <img src="animals1.jpeg" width="300"/>
+                        </a>
+                        <div class="bd">
+                            <h3>Slideshow headline</h3>
+                            <p>
+                                This is some kind of animal showing up in the slideshow, maybe with a link to something
+                                interesting and lots of text about the animal in question. A <a
+                                    href="https://en.wikipedia.org/wiki/Animal" target="_blank">link to wikipedia</a>
+                                seems appropriate.
+                            </p>
+                            <p>
+                                This is some kind of animal showing up in the slideshow, maybe with a link to something
+                                interesting and lots of text about the animal in question. A <a
+                                    href="https://en.wikipedia.org/wiki/Animal" target="_blank">link to wikipedia</a>
+                                seems appropriate.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slideshow-slide js-slideshow-slide">
+                <div class="slideshow-slide--content">
+                    <div class="media">
+                        <a href="http://www.github.com" class="imgExt">
+                            <img src="animals2.jpeg" width="300"/>
+                        </a>
+                        <div class="bd">
+                            <h3>Another headline</h3>
+                            <p>
+                                This is some kind of animal showing up in the slideshow, maybe with a link to something
+                                interesting and lots of text about the animal in question. A <a
+                                    href="https://en.wikipedia.org/wiki/Animal" target="_blank">link to wikipedia</a>
+                                seems appropriate.
+                            </p>
+                            <p>
+                                This is some kind of animal showing up in the slideshow, maybe with a link to something
+                                interesting and lots of text about the animal in question. A <a
+                                    href="https://en.wikipedia.org/wiki/Animal" target="_blank">link to wikipedia</a>
+                                seems appropriate.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aside>
+            <div class="slideshow-counter js-slideshow-counter"></div>
+        </aside>
+    </section>
+
+</main>
+
+</body>
+
+<script language="Javascript">
+    var slideshowImages = Slideshow();
+    slideshowImages.init('.js-slideshow-images', true);
+
+    var slideshowImagesNoLoop = Slideshow();
+    slideshowImagesNoLoop.init('.js-slideshow-images-noloop', false);
+
+    var slideshowContent = Slideshow();
+    slideshowContent.init('.js-slideshow-content', true);
+</script>
+</html>
