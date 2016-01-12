@@ -55,10 +55,10 @@ var Slideshow = function () {
 
     var setupCounter = function () {
         if (slideshowShouldLoop) {
-            slideshowCounter.innerText = "Slide " + currentSlideIndex + " of " + (slideshowItems.length - 2);
+            slideshowCounter.textContent = "Slide " + currentSlideIndex + " of " + (slideshowItems.length - 2);
         }
         else {
-            slideshowCounter.innerText = "Slide " + (currentSlideIndex + 1) + " of " + slideshowItems.length;
+            slideshowCounter.textContent = "Slide " + (currentSlideIndex + 1) + " of " + slideshowItems.length;
         }
 
     };
