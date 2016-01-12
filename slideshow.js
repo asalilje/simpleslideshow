@@ -248,4 +248,3 @@ var Slideshow = function () {
     }
 
 }
-
