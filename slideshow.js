@@ -123,10 +123,10 @@ var Slideshow = function () {
             return;
         }
         var endTouch = getTouch(e.changedTouches[0]);
-
-        log("touchend at " + endTouch.pageX);
         var pixelsMovedX = Math.abs(endTouch.pageX - startTouch.pageX);
         var touchSpeed = endTouch.timestamp - startTouch.timestamp;
+
+        log("touchend at " + endTouch.pageX + ", moved " + pixelsMovedX + " pixels in " + touchSpeed + " ms");
 
         if ((touchSpeed < 300 && pixelsMovedX > 6) || (pixelsMovedX / slideshowContainer.offsetWidth > 0.5)) {
             if (endTouch.pageX < startTouch.pageX) {
@@ -188,6 +188,32 @@ var Slideshow = function () {
         }
     };
 
+    var goToPrevious = function () {
+        if (!isFirstSlide()) {
+            currentSlideIndex--;
+        }
+        setCurrentSlide(true);
+    };
+
+    var goToNext = function () {
+        if (!isLastSlide()) {
+            currentSlideIndex++;
+        }
+        setCurrentSlide(true);
+    };
+
+    var isFirstSlide = function () {
+        return currentSlideIndex === 0;
+    };
+
+    var isLastSlide = function () {
+        return currentSlideIndex === slideshowItems.length - 1;
+    };
+
+    var log = function (text) {
+        console.log(text);
+    };
+
     var addClass = function (element, classToAdd) {
         if (element === null)
             return;
@@ -215,32 +241,6 @@ var Slideshow = function () {
             }
         }
         element.setAttribute("class", classArray.join(" "));
-    };
-
-    var goToPrevious = function () {
-        if (!isFirstSlide()) {
-            currentSlideIndex--;
-        }
-        setCurrentSlide(true);
-    };
-
-    var goToNext = function () {
-        if (!isLastSlide()) {
-            currentSlideIndex++;
-        }
-        setCurrentSlide(true);
-    };
-
-    var isFirstSlide = function () {
-        return currentSlideIndex === 0;
-    };
-
-    var isLastSlide = function () {
-        return currentSlideIndex === slideshowItems.length - 1;
-    };
-
-    var log = function (text) {
-        console.log(text);
     };
 
     return {
