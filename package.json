@@ -1,0 +1,23 @@
+{
+  "name": "simpeslideshow",
+  "version": "1.0.0",
+  "description": "A simple pure javascript slideshow. Responsive and usable for both images and other HTML-content.",
+  "dependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma-jasmine": "^0.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asalilje/simpleslideshow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asalilje/simpleslideshow/issues"
+  },
+  "homepage": "https://github.com/asalilje/simpleslideshow#readme"
+}

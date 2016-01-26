@@ -35,6 +35,8 @@ var Slideshow = function () {
         if (slideshowItems.length === 0)
             return;
 
+
+
         if (slideshowShouldLoop) {
             setupSlideshowLoop();
         }
@@ -64,6 +66,7 @@ var Slideshow = function () {
     };
 
     var setupSlideshowLoop = function () {
+
         var firstSlide = slideshowItems[0];
         var lastSlide = slideshowItems[slideshowItems.length - 1];
         var firstSlideCopy = firstSlide.cloneNode(true);
@@ -72,6 +75,7 @@ var Slideshow = function () {
         //insert first and last in DOM
         slideshowContainer.insertBefore(lastSlideCopy, firstSlide);
         slideshowContainer.appendChild(firstSlideCopy);
+
 
         //insert first and last in slide array
         slideshowItems.unshift(lastSlideCopy);
@@ -245,6 +249,6 @@ var Slideshow = function () {
 
     return {
         init: init
-    }
+     }
 
 }
